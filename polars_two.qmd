@@ -1,0 +1,296 @@
+---
+title: "converted from jupyter"
+author: John Little
+date: today
+output: html_document
+---
+
+
+`conda install polars` via Terminal
+
+
+```{python}
+import polars as pl
+from datetime import datetime
+import numpy as np
+```
+
+## why Polars over Pandas
+
+- https://www.youtube.com/watch?v=_cDLdwaUe6E
+    -  way faster computer (multicore processing)
+    -  faster to compose
+    -  for working with large datasets
+    -  lazy evaluation - delays some operations till needed
+    -  written mostly in rust (as opposed to pandas, written mostly in C++)
+    -  query optimization
+    -  list of functions that are the same between pandas and polars:  https://youtu.be/sepiszMSvBs?si=Y5oOCNdPmZW2MKLM&t=581
+    -  can work in larger than RAM context (lazy mode and eager mode)
+    -  "came for the speed, stayed for the syntax"
+ 
+## difference between Pandas and Polars
+- polars does not have to index data frames
+
+
+## DuckDB v Pandas v Polars
+ - DuckDB vs Pandas vs Polars For Python devs
+     -  Duck DB = lightwaight OLAP database (larger than RAM data processing)
+     -  columnar data analysis
+     -  SQL driven
+
+```{python}
+print("now now")
+```     
+
+```{python}
+df_brodhead = pl.read_csv("data/brodhead_center.csv")
+print(df_brodhead.head())
+```
+
+```{python}
+print("now hi")
+```
+
+```{python}
+foo = df_brodhead.filter(
+    pl.col("menuType") == "appetizer",
+    pl.col("itemType") == "snack"
+).select(
+    pl.col("name", "cost")
+)
+
+print(foo)
+```
+
+from: https://realpython.com/polars-python/
+
+```{python}
+num_rows = 5000
+rng = np.random.default_rng(seed=7)
+
+buildings_data = {
+      "sqft": rng.exponential(scale=1000, size=num_rows),
+      "year": rng.integers(low=1995, high=2023, size=num_rows),
+      "building_type": rng.choice(["A", "B", "C"], size=num_rows),
+}
+buildings = pl.DataFrame(buildings_data)
+buildings
+```
+
+```{python}
+buildings.schema
+```
+
+```{python}
+df_brodhead.schema
+```
+
+---
+
+```{python}
+#import numpy as np
+#import polars as pl
+num_rows = 5000
+rng = np.random.default_rng(seed=7)
+buildings_data = {
+     "sqft": rng.exponential(scale=1000, size=num_rows),
+     "year": rng.integers(low=1995, high=2023, size=num_rows),
+     "building_type": rng.choice(["A", "B", "C"], size=num_rows),
+ }
+buildings = pl.DataFrame(buildings_data)
+```
+
+```{python}
+buildings
+```
+
+```{python}
+df_brodhead
+```
+
+```{python}
+df_brodhead.columns
+```
+
+```{python}
+df_brodhead.select(pl.col(['type', 'itemType']))
+```
+
+```{python}
+df_brodhead.with_columns(
+    (pl.col('cost') + pl.col('rating')).alias("sum"),
+    (pl.col('cost') * 2).alias("double_cost")
+).filter(
+    pl.col('itemType') == "snack",
+    pl.col('double_cost') >= 14
+)
+```
+
+```{python}
+# group_by
+# count is now len
+
+df_brodhead.group_by("itemType").len().sort('len', descending=True)
+```
+
+Need to read more about aggregation:  https://docs.pola.rs/user-guide/concepts/contexts/#group-by-aggregation
+
+```{python}
+#df.join(df2, on="id")
+```
+
+```{python}
+#pl.concat([df1, df2], how="vertical)
+```
+
+## Aggregation
+
+https://docs.pola.rs/user-guide/expressions/aggregation/
+
+
+```{python}
+url = "https://theunitedstates.io/congress-legislators/legislators-historical.csv"
+
+dtypes = {
+    "first_name": pl.Categorical,
+    "gender": pl.Categorical,
+    "type": pl.Categorical,
+    "state": pl.Categorical,
+    "party": pl.Categorical,
+}
+
+dataset = pl.read_csv(url, dtypes=dtypes).with_columns(
+    pl.col("birthday").str.to_date(strict=False)
+)
+
+dataset
+```
+
+```{python}
+marg_df = dataset.filter(
+    pl.col("last_name") == "Smith",
+    pl.col("gender") == "F"
+)
+marg_df
+```
+
+```{python}
+q = (
+    dataset.lazy()
+    .filter(pl.col("gender") == "F")
+    .group_by("last_name")
+    .agg(
+        pl.len(),
+        pl.col("gender"),
+        pl.last("gender").alias("foo"),
+        pl.last("first_name"),
+    )
+    .sort("len", descending=True)
+    .limit(5)
+)
+
+df_agg = q.collect()
+print(df_agg)
+```
+
+## Unique
+
+```{python}
+df_brodhead.select(
+    pl.col(
+    "name", "type")
+).unique(subset=["name"])
+```
+
+```{python}
+df_brodhead.glimpse()
+```
+
+## Tips and Tricks
+
+https://www.youtube.com/watch?v=39jB8nJBrCI
+
+
+```{python}
+df_brodhead.select(
+    pl.col(["name", "type", "itemName", "cost"])
+    ).sort(
+    by="cost", descending=True
+    ).filter(
+        pl.col("cost") < 3
+    )
+```
+
+
+```{python}
+
+df_brodhead.filter(
+    pl.col("cost") == df_brodhead.select(pl.col("cost")).min()
+).select(
+    pl.col(["name", "itemName", "cost"])
+)
+
+```
+
+Which resturant has the most expensive items
+
+```{python}
+df_brodhead.filter(
+    pl.col("cost") == df_brodhead.select(pl.col("cost")).max()
+).select(pl.col(
+    ["name", "itemName", "cost"]
+))
+```
+
+
+At the Brodhead Center, how many of the entrees (found in the menuType variable) cost eight dollars?
+
+
+```{python}
+df_brodhead.filter(
+    pl.col("menuType") == "entree",
+    pl.col("cost") == 8
+).sort("rating", descending=True)
+```
+
+
+The head of Duke dining is considering reducing prices at the Brodhead Center. Using what we’ve learned in class, write code that will calculate a new variable (halfPrice) that contains items at half price.
+
+
+```{python}
+df_brodhead.with_columns(
+    (pl.col("cost") * 0.5).alias("half_price")
+)
+```
+
+with the above code chunk, cast half_price as an integer
+
+
+```{python}
+df_brodhead.with_columns(
+    (pl.col("cost") * 0.5).alias("half_price").cast(pl.Int64)
+).head(4)
+```
+
+How many entrees are in the dataset (menuType variable)? How many desserts
+
+```{python}
+df_brodhead['menuType'].value_counts().sort("count", descending=True)
+```
+
+
+```{python}
+df_brodhead.groupby(
+    ['menuType', 'itemType']
+    ).agg(
+        pl.count()
+    ).sort("count", descending = True).head(8)
+```
+
+```{python}
+df_brodhead.groupby(
+    ['menuType', 'itemType']
+    ).agg(
+        pl.count()
+    ).sort(["menuType", "itemType"]).head(8)
+```
