@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="John Little">
+<meta name="dcterms.date" content="2024-05-20">
 
 <title>converted from jupyter</title>
 <style>
@@ -57,16 +59,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="polars_why-and-cheatsheet-demo_files/libs/clipboard/clipboard.min.js"></script>
-<script src="polars_why-and-cheatsheet-demo_files/libs/quarto-html/quarto.js"></script>
-<script src="polars_why-and-cheatsheet-demo_files/libs/quarto-html/popper.min.js"></script>
-<script src="polars_why-and-cheatsheet-demo_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="polars_why-and-cheatsheet-demo_files/libs/quarto-html/anchor.min.js"></script>
-<link href="polars_why-and-cheatsheet-demo_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="polars_why-and-cheatsheet-demo_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="polars_why-and-cheatsheet-demo_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="polars_why-and-cheatsheet-demo_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="polars_why-and-cheatsheet-demo_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="polars_two_files/libs/clipboard/clipboard.min.js"></script>
+<script src="polars_two_files/libs/quarto-html/quarto.js"></script>
+<script src="polars_two_files/libs/quarto-html/popper.min.js"></script>
+<script src="polars_two_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="polars_two_files/libs/quarto-html/anchor.min.js"></script>
+<link href="polars_two_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="polars_two_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="polars_two_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="polars_two_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="polars_two_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
@@ -89,7 +91,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>John Little </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">May 20, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -100,7 +114,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p><code>conda install polars</code> via Terminal</p>
-<div id="0860596f" class="cell" data-execution_count="1">
+<div id="c06109f0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> datetime <span class="im">import</span> datetime</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -138,13 +152,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>SQL driven</li>
 </ul></li>
 </ul>
-<div id="24ebdab3" class="cell" data-execution_count="2">
+<div id="c9e1c4bd" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"now now"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>now now</code></pre>
 </div>
 </div>
-<div id="7c40b0aa" class="cell" data-execution_count="3">
+<div id="4fa10e19" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df_brodhead <span class="op">=</span> pl.read_csv(<span class="st">"data/brodhead_center.csv"</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_brodhead.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -162,13 +176,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 └───────────────────┴───────────────┴───────────┴──────────┴───────────────────────┴──────┴────────┘</code></pre>
 </div>
 </div>
-<div id="ab2cdb9b" class="cell" data-execution_count="4">
+<div id="2b876025" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"now hi"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>now hi</code></pre>
 </div>
 </div>
-<div id="14b6a023" class="cell" data-execution_count="5">
+<div id="f6863a78" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>foo <span class="op">=</span> df_brodhead.<span class="bu">filter</span>(</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">"menuType"</span>) <span class="op">==</span> <span class="st">"appetizer"</span>,</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">"itemType"</span>) <span class="op">==</span> <span class="st">"snack"</span></span>
@@ -196,7 +210,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>from: https://realpython.com/polars-python/</p>
-<div id="57647d73" class="cell" data-execution_count="6">
+<div id="e3f9b34e" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>num_rows <span class="op">=</span> <span class="dv">5000</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng(seed<span class="op">=</span><span class="dv">7</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -290,13 +304,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="465caabe" class="cell" data-execution_count="7">
+<div id="c1ed6415" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>buildings.schema</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>OrderedDict([('sqft', Float64), ('year', Int64), ('building_type', String)])</code></pre>
 </div>
 </div>
-<div id="633086eb" class="cell" data-execution_count="8">
+<div id="1fc72a34" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.schema</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <pre><code>OrderedDict([('name', String),
@@ -309,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <hr>
-<div id="55a84e11" class="cell" data-execution_count="9">
+<div id="70049582" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">#import numpy as np</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#import polars as pl</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>num_rows <span class="op">=</span> <span class="dv">5000</span></span>
@@ -321,7 +335,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a> }</span>
 <span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>buildings <span class="op">=</span> pl.DataFrame(buildings_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="c14fb5cd" class="cell" data-execution_count="10">
+<div id="f7bc4b9c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>buildings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="10">
 <div><style>
@@ -406,7 +420,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="e8c87ca5" class="cell" data-execution_count="11">
+<div id="1a64bfd2" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df_brodhead</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <div><style>
@@ -543,13 +557,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="d54ad204" class="cell" data-execution_count="12">
+<div id="80379f0a" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.columns</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>['name', 'type', 'menuType', 'itemType', 'itemName', 'cost', 'rating']</code></pre>
 </div>
 </div>
-<div id="69ee02a3" class="cell" data-execution_count="13">
+<div id="c6dd3245" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.select(pl.col([<span class="st">'type'</span>, <span class="st">'itemType'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="13">
 <div><style>
@@ -621,7 +635,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="4fc2cfca" class="cell" data-execution_count="14">
+<div id="a8ff7887" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.with_columns(</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>    (pl.col(<span class="st">'cost'</span>) <span class="op">+</span> pl.col(<span class="st">'rating'</span>)).alias(<span class="st">"sum"</span>),</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>    (pl.col(<span class="st">'cost'</span>) <span class="op">*</span> <span class="dv">2</span>).alias(<span class="st">"double_cost"</span>)</span>
@@ -713,7 +727,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="27207828" class="cell" data-execution_count="15">
+<div id="b18d8f3d" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># group_by</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># count is now len</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -744,11 +758,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>9</td>
 </tr>
 <tr class="even">
-<td>"sandwich"</td>
+<td>"snack"</td>
 <td>8</td>
 </tr>
 <tr class="odd">
-<td>"snack"</td>
+<td>"sandwich"</td>
 <td>8</td>
 </tr>
 <tr class="even">
@@ -772,7 +786,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>1</td>
 </tr>
 <tr class="odd">
-<td>"beef"</td>
+<td>"chicken"</td>
 <td>1</td>
 </tr>
 <tr class="even">
@@ -780,7 +794,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>1</td>
 </tr>
 <tr class="odd">
-<td>"chicken"</td>
+<td>"beef"</td>
 <td>1</td>
 </tr>
 </tbody>
@@ -789,17 +803,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Need to read more about aggregation: https://docs.pola.rs/user-guide/concepts/contexts/#group-by-aggregation</p>
-<div id="199d2a64" class="cell" data-execution_count="16">
+<div id="982ac699" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">#df.join(df2, on="id")</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="4c8cc172" class="cell" data-execution_count="17">
+<div id="4df197ae" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">#pl.concat([df1, df2], how="vertical)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="aggregation" class="level2">
 <h2 class="anchored" data-anchor-id="aggregation">Aggregation</h2>
 <p>https://docs.pola.rs/user-guide/expressions/aggregation/</p>
-<div id="f26303e1" class="cell" data-execution_count="18">
+<div id="936885eb" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>url <span class="op">=</span> <span class="st">"https://theunitedstates.io/congress-legislators/legislators-historical.csv"</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>dtypes <span class="op">=</span> {</span>
@@ -1327,7 +1341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="2c9a768c" class="cell" data-execution_count="19">
+<div id="b65849c6" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>marg_df <span class="op">=</span> dataset.<span class="bu">filter</span>(</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">"last_name"</span>) <span class="op">==</span> <span class="st">"Smith"</span>,</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">"gender"</span>) <span class="op">==</span> <span class="st">"F"</span></span>
@@ -1541,7 +1555,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="12b688bd" class="cell" data-execution_count="20">
+<div id="d6c813d5" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>q <span class="op">=</span> (</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    dataset.lazy()</span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>    .<span class="bu">filter</span>(pl.col(<span class="st">"gender"</span>) <span class="op">==</span> <span class="st">"F"</span>)</span>
@@ -1566,17 +1580,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 │ str       ┆ u32 ┆ list[cat]       ┆ cat ┆ cat        │
 ╞═══════════╪═════╪═════════════════╪═════╪════════════╡
 │ Smith     ┆ 3   ┆ ["F", "F", "F"] ┆ F   ┆ Linda      │
+│ Davis     ┆ 2   ┆ ["F", "F"]      ┆ F   ┆ Susan      │
+│ Jones     ┆ 2   ┆ ["F", "F"]      ┆ F   ┆ Brenda     │
 │ Pratt     ┆ 2   ┆ ["F", "F"]      ┆ F   ┆ Eliza      │
-│ Byron     ┆ 2   ┆ ["F", "F"]      ┆ F   ┆ Beverly    │
-│ Johnson   ┆ 2   ┆ ["F", "F"]      ┆ F   ┆ Eddie      │
-│ Collins   ┆ 2   ┆ ["F", "F"]      ┆ F   ┆ Cardiss    │
+│ Harris    ┆ 2   ┆ ["F", "F"]      ┆ F   ┆ Kamala     │
 └───────────┴─────┴─────────────────┴─────┴────────────┘</code></pre>
 </div>
 </div>
 </section>
 <section id="unique" class="level2">
 <h2 class="anchored" data-anchor-id="unique">Unique</h2>
-<div id="b5797d07" class="cell" data-execution_count="21">
+<div id="c081f2a8" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.select(</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    pl.col(</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"name"</span>, <span class="st">"type"</span>)</span>
@@ -1603,23 +1617,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </thead>
 <tbody>
 <tr class="odd">
-<td>"Tandoor"</td>
-<td>"restaurant"</td>
+<td>"Cafe"</td>
+<td>"cafe"</td>
 </tr>
 <tr class="even">
 <td>"Devils Krafthouse"</td>
 <td>"bar and grill"</td>
 </tr>
 <tr class="odd">
-<td>"Cafe"</td>
-<td>"cafe"</td>
+<td>"Tandoor"</td>
+<td>"restaurant"</td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 </div>
-<div id="4545fcae" class="cell" data-execution_count="22">
+<div id="b2309ab9" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.glimpse()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 59
@@ -1638,7 +1652,7 @@ $ rating   &lt;i64&gt; 8, 10, 5, 6, 7, 8, 5, 6, 5, 5
 <section id="tips-and-tricks" class="level2">
 <h2 class="anchored" data-anchor-id="tips-and-tricks">Tips and Tricks</h2>
 <p>https://www.youtube.com/watch?v=39jB8nJBrCI</p>
-<div id="33d53dc7" class="cell" data-execution_count="23">
+<div id="50055ec0" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.select(</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    pl.col([<span class="st">"name"</span>, <span class="st">"type"</span>, <span class="st">"itemName"</span>, <span class="st">"cost"</span>])</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    ).sort(</span>
@@ -1682,7 +1696,7 @@ $ rating   &lt;i64&gt; 8, 10, 5, 6, 7, 8, 5, 6, 5, 5
 </div>
 </div>
 </div>
-<div id="28e79272" class="cell" data-execution_count="24">
+<div id="d33af939" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.<span class="bu">filter</span>(</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">"cost"</span>) <span class="op">==</span> df_brodhead.select(pl.col(<span class="st">"cost"</span>)).<span class="bu">min</span>()</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>).select(</span>
@@ -1722,7 +1736,7 @@ $ rating   &lt;i64&gt; 8, 10, 5, 6, 7, 8, 5, 6, 5, 5
 </div>
 </div>
 <p>Which resturant has the most expensive items</p>
-<div id="5e0c1e19" class="cell" data-execution_count="25">
+<div id="0374676f" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.<span class="bu">filter</span>(</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">"cost"</span>) <span class="op">==</span> df_brodhead.select(pl.col(<span class="st">"cost"</span>)).<span class="bu">max</span>()</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>).select(pl.col(</span>
@@ -1772,7 +1786,7 @@ $ rating   &lt;i64&gt; 8, 10, 5, 6, 7, 8, 5, 6, 5, 5
 </div>
 </div>
 <p>At the Brodhead Center, how many of the entrees (found in the menuType variable) cost eight dollars?</p>
-<div id="4634b01b" class="cell" data-execution_count="26">
+<div id="bf8cbc8c" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.<span class="bu">filter</span>(</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">"menuType"</span>) <span class="op">==</span> <span class="st">"entree"</span>,</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    pl.col(<span class="st">"cost"</span>) <span class="op">==</span> <span class="dv">8</span></span>
@@ -1886,7 +1900,7 @@ $ rating   &lt;i64&gt; 8, 10, 5, 6, 7, 8, 5, 6, 5, 5
 </div>
 </div>
 <p>The head of Duke dining is considering reducing prices at the Brodhead Center. Using what we’ve learned in class, write code that will calculate a new variable (halfPrice) that contains items at half price.</p>
-<div id="4cead68d" class="cell" data-execution_count="27">
+<div id="795c9ae2" class="cell" data-execution_count="27">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.with_columns(</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    (pl.col(<span class="st">"cost"</span>) <span class="op">*</span> <span class="fl">0.5</span>).alias(<span class="st">"half_price"</span>)</span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2039,7 +2053,7 @@ $ rating   &lt;i64&gt; 8, 10, 5, 6, 7, 8, 5, 6, 5, 5
 </div>
 </div>
 <p>with the above code chunk, cast half_price as an integer</p>
-<div id="f589c2e3" class="cell" data-execution_count="28">
+<div id="a17d5153" class="cell" data-execution_count="28">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.with_columns(</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    (pl.col(<span class="st">"cost"</span>) <span class="op">*</span> <span class="fl">0.5</span>).alias(<span class="st">"half_price"</span>).cast(pl.Int64)</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>).head(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -2122,7 +2136,7 @@ $ rating   &lt;i64&gt; 8, 10, 5, 6, 7, 8, 5, 6, 5, 5
 </div>
 </div>
 <p>How many entrees are in the dataset (menuType variable)? How many desserts</p>
-<div id="80c5f3b3" class="cell" data-execution_count="29">
+<div id="01bb8543" class="cell" data-execution_count="29">
 <div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>df_brodhead[<span class="st">'menuType'</span>].value_counts().sort(<span class="st">"count"</span>, descending<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="29">
 <div><style>
@@ -2166,16 +2180,16 @@ $ rating   &lt;i64&gt; 8, 10, 5, 6, 7, 8, 5, 6, 5, 5
 </div>
 </div>
 </div>
-<div id="9fd6bd4e" class="cell" data-execution_count="30">
+<div id="a333d4cf" class="cell" data-execution_count="30">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.groupby(</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'menuType'</span>, <span class="st">'itemType'</span>]</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    ).agg(</span>
 <span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>        pl.count()</span>
 <span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    ).sort(<span class="st">"count"</span>, descending <span class="op">=</span> <span class="va">True</span>).head(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\jrl\AppData\Local\Temp\ipykernel_24292\4269465637.py:1: DeprecationWarning: `groupby` is deprecated. It has been renamed to `group_by`.
+<pre><code>C:\Users\jrl\AppData\Local\Temp\ipykernel_18808\4269465637.py:1: DeprecationWarning: `groupby` is deprecated. It has been renamed to `group_by`.
   df_brodhead.groupby(
-C:\Users\jrl\AppData\Local\Temp\ipykernel_24292\4269465637.py:4: DeprecationWarning: `pl.count()` is deprecated. Please use `pl.len()` instead.
+C:\Users\jrl\AppData\Local\Temp\ipykernel_18808\4269465637.py:4: DeprecationWarning: `pl.count()` is deprecated. Please use `pl.len()` instead.
   pl.count()</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="30">
@@ -2207,13 +2221,13 @@ C:\Users\jrl\AppData\Local\Temp\ipykernel_24292\4269465637.py:4: DeprecationWarn
 <td>9</td>
 </tr>
 <tr class="even">
-<td>"appetizer"</td>
-<td>"snack"</td>
+<td>"entree"</td>
+<td>"sandwich"</td>
 <td>8</td>
 </tr>
 <tr class="odd">
-<td>"entree"</td>
-<td>"sandwich"</td>
+<td>"appetizer"</td>
+<td>"snack"</td>
 <td>8</td>
 </tr>
 <tr class="even">
@@ -2237,8 +2251,8 @@ C:\Users\jrl\AppData\Local\Temp\ipykernel_24292\4269465637.py:4: DeprecationWarn
 <td>4</td>
 </tr>
 <tr class="even">
-<td>"side"</td>
-<td>"salad"</td>
+<td>"entree"</td>
+<td>"sausage"</td>
 <td>3</td>
 </tr>
 </tbody>
@@ -2246,16 +2260,16 @@ C:\Users\jrl\AppData\Local\Temp\ipykernel_24292\4269465637.py:4: DeprecationWarn
 </div>
 </div>
 </div>
-<div id="559eb793" class="cell" data-execution_count="31">
+<div id="da357aa0" class="cell" data-execution_count="31">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>df_brodhead.groupby(</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    [<span class="st">'menuType'</span>, <span class="st">'itemType'</span>]</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>    ).agg(</span>
 <span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>        pl.count()</span>
 <span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>    ).sort([<span class="st">"menuType"</span>, <span class="st">"itemType"</span>]).head(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\jrl\AppData\Local\Temp\ipykernel_24292\209293554.py:1: DeprecationWarning: `groupby` is deprecated. It has been renamed to `group_by`.
+<pre><code>C:\Users\jrl\AppData\Local\Temp\ipykernel_18808\209293554.py:1: DeprecationWarning: `groupby` is deprecated. It has been renamed to `group_by`.
   df_brodhead.groupby(
-C:\Users\jrl\AppData\Local\Temp\ipykernel_24292\209293554.py:4: DeprecationWarning: `pl.count()` is deprecated. Please use `pl.len()` instead.
+C:\Users\jrl\AppData\Local\Temp\ipykernel_18808\209293554.py:4: DeprecationWarning: `pl.count()` is deprecated. Please use `pl.len()` instead.
   pl.count()</code></pre>
 </div>
 <div class="cell-output cell-output-display" data-execution_count="31">
@@ -2324,340 +2338,6 @@ C:\Users\jrl\AppData\Local\Temp\ipykernel_24292\209293554.py:4: DeprecationWarni
 </tbody>
 </table>
 </div>
-</div>
-</div>
-<div id="47751c65" class="cell" data-execution_count="32">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># brodhead |&gt;  group_by(name) |&gt; summarize(mean(cost), mean(rating))</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>df_brodhead.groupby(<span class="st">"name"</span>,<span class="st">"menuType"</span>).agg([</span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"cost"</span>).mean().<span class="bu">round</span>(<span class="dv">1</span>).alias(<span class="st">"mean_cost"</span>),</span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>        pl.col(<span class="st">"rating"</span>).mean().<span class="bu">round</span>(<span class="dv">1</span>).alias(<span class="st">"mean_rating"</span>)</span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    ]).sort(<span class="st">"mean_cost"</span>, descending<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\jrl\AppData\Local\Temp\ipykernel_24292\1434352665.py:3: DeprecationWarning: `groupby` is deprecated. It has been renamed to `group_by`.
-  df_brodhead.groupby("name","menuType").agg([</code></pre>
-</div>
-<div class="cell-output cell-output-display" data-execution_count="32">
-<div><style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
-</style>
-<small>shape: (8, 4)</small>
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">name</th>
-<th data-quarto-table-cell-role="th">menuType</th>
-<th data-quarto-table-cell-role="th">mean_cost</th>
-<th data-quarto-table-cell-role="th">mean_rating</th>
-</tr>
-<tr class="odd">
-<th>str</th>
-<th>str</th>
-<th>f64</th>
-<th>f64</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>"Tandoor"</td>
-<td>"entree"</td>
-<td>11.5</td>
-<td>6.5</td>
-</tr>
-<tr class="even">
-<td>"Devils Krafthouse"</td>
-<td>"entree"</td>
-<td>8.6</td>
-<td>6.2</td>
-</tr>
-<tr class="odd">
-<td>"Cafe"</td>
-<td>"entree"</td>
-<td>7.3</td>
-<td>7.5</td>
-</tr>
-<tr class="even">
-<td>"Devils Krafthouse"</td>
-<td>"dessert"</td>
-<td>6.7</td>
-<td>9.0</td>
-</tr>
-<tr class="odd">
-<td>"Devils Krafthouse"</td>
-<td>"side"</td>
-<td>6.6</td>
-<td>6.4</td>
-</tr>
-<tr class="even">
-<td>"Devils Krafthouse"</td>
-<td>"appetizer"</td>
-<td>6.3</td>
-<td>6.9</td>
-</tr>
-<tr class="odd">
-<td>"Cafe"</td>
-<td>"dessert"</td>
-<td>5.8</td>
-<td>8.0</td>
-</tr>
-<tr class="even">
-<td>"Tandoor"</td>
-<td>"appetizer"</td>
-<td>4.9</td>
-<td>8.0</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</section>
-<section id="datasets" class="level2">
-<h2 class="anchored" data-anchor-id="datasets">datasets</h2>
-<div id="1ed5eb61" class="cell" data-execution_count="33">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> vega_datasets <span class="im">import</span> data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div id="133eb56f" class="cell" data-execution_count="34">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>iris_df <span class="op">=</span> data.iris()</span>
-<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>iris_df.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="34">
-<div>
-
-
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th"></th>
-<th data-quarto-table-cell-role="th">sepalLength</th>
-<th data-quarto-table-cell-role="th">sepalWidth</th>
-<th data-quarto-table-cell-role="th">petalLength</th>
-<th data-quarto-table-cell-role="th">petalWidth</th>
-<th data-quarto-table-cell-role="th">species</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">0</td>
-<td>5.1</td>
-<td>3.5</td>
-<td>1.4</td>
-<td>0.2</td>
-<td>setosa</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">1</td>
-<td>4.9</td>
-<td>3.0</td>
-<td>1.4</td>
-<td>0.2</td>
-<td>setosa</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">2</td>
-<td>4.7</td>
-<td>3.2</td>
-<td>1.3</td>
-<td>0.2</td>
-<td>setosa</td>
-</tr>
-<tr class="even">
-<td data-quarto-table-cell-role="th">3</td>
-<td>4.6</td>
-<td>3.1</td>
-<td>1.5</td>
-<td>0.2</td>
-<td>setosa</td>
-</tr>
-<tr class="odd">
-<td data-quarto-table-cell-role="th">4</td>
-<td>5.0</td>
-<td>3.6</td>
-<td>1.4</td>
-<td>0.2</td>
-<td>setosa</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-<div id="8d5b93c7" class="cell" data-execution_count="35">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>data.cars()</span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>cars_df <span class="op">=</span> data.cars()</span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>pl.from_pandas(cars_df).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="35">
-<div><style>
-.dataframe > thead > tr,
-.dataframe > tbody > tr {
-  text-align: right;
-  white-space: pre-wrap;
-}
-</style>
-<small>shape: (5, 9)</small>
-<table class="dataframe table table-sm table-striped small" data-quarto-postprocess="true" data-border="1">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Name</th>
-<th data-quarto-table-cell-role="th">Miles_per_Gallon</th>
-<th data-quarto-table-cell-role="th">Cylinders</th>
-<th data-quarto-table-cell-role="th">Displacement</th>
-<th data-quarto-table-cell-role="th">Horsepower</th>
-<th data-quarto-table-cell-role="th">Weight_in_lbs</th>
-<th data-quarto-table-cell-role="th">Acceleration</th>
-<th data-quarto-table-cell-role="th">Year</th>
-<th data-quarto-table-cell-role="th">Origin</th>
-</tr>
-<tr class="odd">
-<th>str</th>
-<th>f64</th>
-<th>i64</th>
-<th>f64</th>
-<th>f64</th>
-<th>i64</th>
-<th>f64</th>
-<th>datetime[ns]</th>
-<th>str</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>"chevrolet chevelle malibu"</td>
-<td>18.0</td>
-<td>8</td>
-<td>307.0</td>
-<td>130.0</td>
-<td>3504</td>
-<td>12.0</td>
-<td>1970-01-01 00:00:00</td>
-<td>"USA"</td>
-</tr>
-<tr class="even">
-<td>"buick skylark 320"</td>
-<td>15.0</td>
-<td>8</td>
-<td>350.0</td>
-<td>165.0</td>
-<td>3693</td>
-<td>11.5</td>
-<td>1970-01-01 00:00:00</td>
-<td>"USA"</td>
-</tr>
-<tr class="odd">
-<td>"plymouth satellite"</td>
-<td>18.0</td>
-<td>8</td>
-<td>318.0</td>
-<td>150.0</td>
-<td>3436</td>
-<td>11.0</td>
-<td>1970-01-01 00:00:00</td>
-<td>"USA"</td>
-</tr>
-<tr class="even">
-<td>"amc rebel sst"</td>
-<td>16.0</td>
-<td>8</td>
-<td>304.0</td>
-<td>150.0</td>
-<td>3433</td>
-<td>12.0</td>
-<td>1970-01-01 00:00:00</td>
-<td>"USA"</td>
-</tr>
-<tr class="odd">
-<td>"ford torino"</td>
-<td>17.0</td>
-<td>8</td>
-<td>302.0</td>
-<td>140.0</td>
-<td>3449</td>
-<td>10.5</td>
-<td>1970-01-01 00:00:00</td>
-<td>"USA"</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="fb4327dc" class="cell" data-execution_count="36">
-<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>data.list_datasets()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="36">
-<pre><code>['7zip',
- 'airports',
- 'annual-precip',
- 'anscombe',
- 'barley',
- 'birdstrikes',
- 'budget',
- 'budgets',
- 'burtin',
- 'cars',
- 'climate',
- 'co2-concentration',
- 'countries',
- 'crimea',
- 'disasters',
- 'driving',
- 'earthquakes',
- 'ffox',
- 'flare',
- 'flare-dependencies',
- 'flights-10k',
- 'flights-200k',
- 'flights-20k',
- 'flights-2k',
- 'flights-3m',
- 'flights-5k',
- 'flights-airport',
- 'gapminder',
- 'gapminder-health-income',
- 'gimp',
- 'github',
- 'graticule',
- 'income',
- 'iowa-electricity',
- 'iris',
- 'jobs',
- 'la-riots',
- 'londonBoroughs',
- 'londonCentroids',
- 'londonTubeLines',
- 'lookup_groups',
- 'lookup_people',
- 'miserables',
- 'monarchs',
- 'movies',
- 'normal-2d',
- 'obesity',
- 'ohlc',
- 'points',
- 'population',
- 'population_engineers_hurricanes',
- 'seattle-temps',
- 'seattle-weather',
- 'sf-temps',
- 'sp500',
- 'stocks',
- 'udistrict',
- 'unemployment',
- 'unemployment-across-industries',
- 'uniform-2d',
- 'us-10m',
- 'us-employment',
- 'us-state-capitals',
- 'volcano',
- 'weather',
- 'weball26',
- 'wheat',
- 'windvectors',
- 'world-110m',
- 'zipcodes']</code></pre>
 </div>
 </div>
 </section>
