@@ -25,28 +25,38 @@ import numpy as np
     -  list of functions that are the same between pandas and polars:  https://youtu.be/sepiszMSvBs?si=Y5oOCNdPmZW2MKLM&t=581
     -  can work in larger than RAM context (lazy mode and eager mode)
     -  "came for the speed, stayed for the syntax"
+
+## Blurb
+
+Polars is a Python* package.  This document shows a QuickStart approach for faster and more intuitive Python analytics.
+
+Learning Polars-Python is more accessible than Pandas while also fully compatible and Pythonic. Bonus: Polars is more efficient than numpy or pandas. Polars is a data frame, column style approach for working with data, especially efficient with medium and larger-than-RAM analytics.  Query optimization is built in! Explore fastest-than-pandas processing without needing, nor excluding, SQL. 
  
 ## difference between Pandas and Polars
 - polars does not have to index data frames
 
 
-## DuckDB v Pandas v Polars
- - DuckDB vs Pandas vs Polars For Python devs
+## Polars v Pandas v DuckDB 
+- Polars 
+    - lightnight fast, column oriented
+    - split-apply-combine inspired grammar (i.e. group_by)
+    - lazy and eager evaluation
+    - larger than RAM
+    - No need for SQL, but does not preclude use of SQL in combination with Polars functions
+    -  data size limits: tens or even hundreds of GB
+- Pandas
+    - split-apply-combine inspired grammar (i.e. group_by)
+    - 5 - 10 GB (larger data sizes will degrade performance)
+ - DuckDB 
      -  Duck DB = lightwaight OLAP database (larger than RAM data processing)
      -  columnar data analysis
      -  SQL driven
-
-```{python}
-print("now now")
-```     
+     -  Theoretical size limit is in the petabyte range.   Can handle data that are orders of magnitude larger than either Polars or Pandas
+    
 
 ```{python}
 df_brodhead = pl.read_csv("data/brodhead_center.csv")
 print(df_brodhead.head())
-```
-
-```{python}
-print("now hi")
 ```
 
 ```{python}
